@@ -3,5 +3,8 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/git@github.com-QueseGen:QueseGen/nasa-vues.git" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/https:/github.com/QueseGen/nasa-vues.git" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/remove" vcs="Git" />
   </component>
 </project>

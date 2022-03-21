@@ -9,6 +9,19 @@
       <img v-bind:src=post.hdurl>
       <p>Reference:<br> {{post.copyright}} <br> {{post.url}} <br> </p>
     </div>
+
+  <h1> Advancing</h1>
+  <form>
+    <label>Chose a Rover:  </label>
+      <select id="rover" v-model="rover" name="rover">
+        <option>Curiosity</option>
+        <option>Opportunity</option>
+        <option>Spirit</option>
+      </select>
+    <label>Date Captured:</label>
+    <input type="date" id="date" name="Date">
+    <input type="submit" value="Submit" />
+  </form>
 </template>
 
 <script>
