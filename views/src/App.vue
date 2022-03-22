@@ -1,33 +1,24 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <!--<HelloWorld msg="Welcome to Your Vue.js App"/>-->
- <h1>Testing</h1>
-    <div v-for="post in posts" v-bind:key="post.title">
+  <h1>Testing</h1>
+  <div v-for="post in posts" v-bind:key="post.title">
 
-      <h2>{{ post.title}}</h2> <p>{{ post.date }}</p>
-      <p style="box-sizing: content-box; text-indent: 40px;">{{ post.explanation }}</p> <br>
-      <img v-bind:src=post.hdurl>
-      <p>Reference:<br> {{post.copyright}} <br> {{post.url}} <br> </p>
-    </div>
+    <h2>{{ post.title}}</h2> <p>{{ post.date }}</p>
+    <p style="box-sizing: content-box; text-indent: 40px;">{{ post.explanation }}</p> <br>
+    <img v-bind:src=post.hdurl>
+    <p>Reference:<br> {{post.copyright}} <br> {{post.url}} <br> </p>
+  </div>
 
   <h1> Advancing</h1>
-  <form>
-    <label>Chose a Rover:  </label>
-      <select id="rover" v-model="rover" name="rover">
-        <option>Curiosity</option>
-        <option>Opportunity</option>
-        <option>Spirit</option>
-      </select>
-    <label>Date Captured:</label>
-    <input type="date" id="date" name="Date">
-    <input type="submit" value="Submit" />
-  </form>
+ <rover-selector></rover-selector>
 </template>
 
 <script>
 import axios from 'axios';
-
+import RoverSelector from "@/components/RoverSelector";
 export default {
+  components: {RoverSelector},
   el: '#app',
   data() {
     return {
