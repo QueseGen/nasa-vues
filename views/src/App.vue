@@ -9,8 +9,6 @@
     <img v-bind:src=post.hdurl>
     <p>Reference:<br> {{post.copyright}} <br> {{post.url}} <br> </p>
   </div>
-
-  <h1> Advancing</h1>
  <rover-selector></rover-selector>
 </template>
 
