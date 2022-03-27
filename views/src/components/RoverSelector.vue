@@ -1,16 +1,15 @@
 
 <template>
   <h1> Advancing/Scroll to bottom for Selector!</h1>
-  <div v-for="post in results" v-bind:key="post.id">
-
+  <div class="pics" v-for="post in results" v-bind:key="post.id">
     <h2>{{ post.rover.name}}</h2>
     <p>Capture: {{post.earth_date}}/Sol{{post.sol}}   |    By:  {{post.camera.full_name}}</p>
-    <p style="box-sizing: content-box; text-indent: 40px;">{{ post.explanation }}</p> <br>
+    <p>{{ post.explanation }}</p> <br>
     <img v-bind:src=post.img_src>
     <p><u>Launching & Landing Day</u><br> {{post.rover.launch_date}} - {{post.rover.landing_date}} <br> </p>
   </div>
 
-  <form @submit.prevent="pullData" id="selector" style="min-height: 30vh;">
+  <form @submit.prevent="pullData" class="selector" style="min-height: 30vh;">
     <label>Chose a Rover:  </label>
     <select id="rover"  name="rover">
       <option value="curiosity">Curiosity</option>
@@ -41,7 +40,7 @@
 import axios from "axios";
 
 export default {
-  name: "RoverSelector",
+  name: "Rover-Selector",
   data() {
     return {
       results: [],
@@ -76,5 +75,12 @@ export default {
   }
 </script>
 <style scoped>
-
+img{
+  width: clamp(600px,100%, 1200px);
+  aspect-ratio: 16/9;
+}
+p {
+  box-sizing: content-box;
+  text-indent: 40px;
+}
 </style>

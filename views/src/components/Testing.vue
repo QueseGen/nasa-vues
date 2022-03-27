@@ -1,0 +1,62 @@
+<template>
+  <div class="test">
+    <br>
+  <h1>++Article of the Day!++</h1>
+    <div class="post" v-for="post in posts" v-bind:key="post.title">
+    <h2> <u>{{ post.title}}</u></h2> <p>{{ post.date }}</p>
+    <p class="brief">{{ post.explanation }} {{post.url}} <!--<a style="alignment: right;" href={{post.hdurl}} target="_blank" rel="noreferrer noopener"> Ref</a> --></p>
+    <img v-bind:src=post.hdurl alt={{post.url}}>
+    <p class="brief">{{post.copyright}} <br> </p>
+  </div>
+  </div>
+</template>
+
+<script>
+import axios from 'axios';
+
+export default {
+  name: "Test-ing",
+  el: '#test',
+  data() {
+    return {
+      posts: [],
+      errors:[]
+    };
+  },
+  methods: {
+    async getData() {
+      try {
+        const response = await axios.get(
+          "https://api.nasa.gov/planetary/apod?api_key=ZtGGTCYJAN4niycyVPz6Dn3IyBuVwbNId4G6dpWJ"
+        );
+        // JSON responses are automatically parsed.
+        this.posts.push(response.data);
+      } catch (error) {
+        this.errors.push(error);
+      }
+      console.log(this.posts[0].title);
+    },
+  },
+  created() {
+    this.getData();
+  },
+};
+</script>
+
+<style scoped>
+.test {
+  top: 60px;
+  background-color: gold;
+  width: 100%;
+}
+.brief{
+  box-sizing: content-box;
+  text-indent: 40px;
+}
+
+img{
+  width: clamp(600px,100%, 1200px);
+  aspect-ratio: 16/9;
+ }
+
+</style>
