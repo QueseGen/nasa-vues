@@ -15,6 +15,7 @@
 <script>
 import axios from 'axios';
 import RoverSelector from "@/components/RoverSelector";
+
 export default {
   components: {RoverSelector},
   el: '#app',
@@ -45,6 +46,7 @@ export default {
 </script>
 
 <style>
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
