@@ -8,7 +8,7 @@
     <p>{{ post.explanation }}</p> <br>
     <img v-bind:src=post.img_src>
     <p><u>Launching & Landing Day</u></p>
-    <p>{{post.rover.launch_date}} - {{post.rover.landing_date}}</p><br>
+    <p>{{post.rover.launch_date}} - {{post.rover.landing_date}}</p>
   </div>
   <h2>Pick a Rover, Date and View to see its captured images that day:</h2>
   <form @submit.prevent="pullData"  onsubmit="parent.scrollTo(0,1200);" class="selector"  id="selector" style="min-height: 30vh;">

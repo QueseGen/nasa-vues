@@ -48,7 +48,7 @@ export default {
 .test {
   top: 60px;
   background-color: gold;
-  width: clamp(300px,100%, 1200px);
+  width: clamp(300px,100%, 100%);
   box-sizing: content-box;
 }
 .brief{

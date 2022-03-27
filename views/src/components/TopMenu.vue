@@ -24,7 +24,7 @@ export default {
   align-items: center;
   box-sizing: content-box;
   background-color: black;
-  width: clamp(300px,100%, 800px);
+  width: clamp(300px,100%, 100%);
 }
 
 </style>
