@@ -4,9 +4,10 @@
   <h1>++Article of the Day!++</h1>
     <div class="post" v-for="post in posts" v-bind:key="post.title">
     <h2> <u>{{ post.title}}</u></h2> <p>{{ post.date }}</p>
-    <p class="brief">{{ post.explanation }} {{post.url}} <!--<a style="alignment: right;" href={{post.hdurl}} target="_blank" rel="noreferrer noopener"> Ref</a> --></p>
+    <p class="brief">{{ post.explanation }}</p>
+     <!-- <p class="brief"> {{post.url}}</p> -->
     <img v-bind:src=post.hdurl alt={{post.url}}>
-    <p class="brief">{{post.copyright}} <br> </p>
+    <p class="brief" >{{post.copyright}} <br> </p>
   </div>
   </div>
 </template>
@@ -47,7 +48,8 @@ export default {
 .test {
   top: 60px;
   background-color: gold;
-  width: 100%;
+  width: clamp(300px,100%, 1200px);
+  box-sizing: content-box;
 }
 .brief{
   box-sizing: content-box;
@@ -55,7 +57,7 @@ export default {
 }
 
 img{
-  width: clamp(600px,100%, 1200px);
+  width: clamp(300px,100%, 1200px);
   aspect-ratio: 16/9;
  }
 

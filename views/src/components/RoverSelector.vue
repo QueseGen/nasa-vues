@@ -79,9 +79,10 @@ export default {
 </script>
 <style scoped>
 img{
-  width: clamp(600px,100%, 1200px);
+  width: clamp(300px,100%, 1200px);
   aspect-ratio: 16/9;
 }
+
 p {
   box-sizing: content-box;
   text-indent: 40px;

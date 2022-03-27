@@ -16,16 +16,15 @@ export default {
 </script>
 
 <style scoped>
-.menu{
+.menu, .items{
   display: flex;
   position: fixed;
   height: 50px;
   justify-content: center;
   align-items: center;
+  box-sizing: content-box;
   background-color: black;
-  width: 100%;
+  width: clamp(300px,100%, 800px);
 }
-.items{
 
-}
 </style>
