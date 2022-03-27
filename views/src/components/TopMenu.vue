@@ -1,7 +1,7 @@
 <template >
   <div class="menu">
     <div class="items">
-      <h1 >Yee</h1>
+      <h1 style="color: white" >NASA VUES</h1>
     </div>
 
 
