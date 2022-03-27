@@ -1,7 +1,7 @@
 
 <template>
   <h1> Sol Selector</h1>
-  <h2>Pick a Rover, Date and View to see its captured images that day:</h2>
+  <p style="color: red"> <b>(Press Command key + Arrow DOWN/END key to get back after, ENJOY!)</b></p>
   <div class="pics" v-for="post in results" v-bind:key="post.id">
     <h2>{{ post.rover.name}}</h2>
     <p>Capture: {{post.earth_date}}/Sol{{post.sol}}   |    By:  {{post.camera.full_name}}</p>
@@ -10,8 +10,8 @@
     <p><u>Launching & Landing Day</u></p>
     <p>{{post.rover.launch_date}} - {{post.rover.landing_date}}</p><br>
   </div>
-
-  <form @submit.prevent="pullData" class="selector"  id="selector" style="min-height: 30vh;">
+  <h2>Pick a Rover, Date and View to see its captured images that day:</h2>
+  <form @submit.prevent="pullData"  onsubmit="parent.scrollTo(0,1200);" class="selector"  id="selector" style="min-height: 30vh;">
     <label>Chose a Rover:  </label>
     <select id="rover"  name="rover">
       <option value="curiosity">Curiosity</option>
@@ -37,7 +37,7 @@
     <input type="date" id="date" name="date">
     <input type="submit"  value="Submit" />
   </form>
-  <p style="color: red"> <b>(After query...Press Command key + arrow down or end key to return)</b></p>
+
   </template>
 <script>
 import axios from "axios";
