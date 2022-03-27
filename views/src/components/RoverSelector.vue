@@ -1,6 +1,7 @@
 
 <template>
-  <h1> Advancing/Scroll to bottom for Selector!</h1>
+  <h1> Sol Selector</h1>
+  <h2>Pick a Rover, Date and View to see its captured images that day:</h2>
   <div class="pics" v-for="post in results" v-bind:key="post.id">
     <h2>{{ post.rover.name}}</h2>
     <p>Capture: {{post.earth_date}}/Sol{{post.sol}}   |    By:  {{post.camera.full_name}}</p>
@@ -36,6 +37,7 @@
     <input type="date" id="date" name="date">
     <input type="submit"  value="Submit" />
   </form>
+  <p style="color: red"> <b>(After query...Press Command key + arrow down or end key to return)</b></p>
   </template>
 <script>
 import axios from "axios";
