@@ -1,7 +1,7 @@
 <template >
   <div class="menu">
     <div class="items">
-      <h1 @click="scroll('selector')" style="color: white" >NASA VUES</h1>
+      <h1 @click="scroll('selector')">NASA VUES</h1>
     </div>
   </div>
 </template>
@@ -31,5 +31,10 @@ export default {
   background-color: black;
   width: clamp(300px,100%, 100%);
 }
-
+h1{
+  color: white;
+}
+h1:hover {
+  color: rgb(251, 81, 22);
+}
 </style>
