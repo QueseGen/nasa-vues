@@ -36,7 +36,7 @@
     <label>Date Captured:</label>
     <input type="date" id="date" name="date">
     <input type="submit"  value="Submit" />
-    <button  style="margin-left: 1rem" @click="scroll('home')"> HOME </button>
+    <input type="button" style="margin-left: 1rem" @click="scroll('home')" value="HOME"/>
   </form>
 
   </template>
