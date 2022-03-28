@@ -1,6 +1,6 @@
 
 <template>
-  <h1> Sol Selector</h1>
+  <h1 id="sol"> Sol Selector</h1>
   <p style="color: red"> <b>(Press Command key + Arrow DOWN/END key to get back after, ENJOY!)</b></p>
   <div class="pics" v-for="post in results" v-bind:key="post.id">
     <h2>{{ post.rover.name}}</h2>
@@ -36,6 +36,7 @@
     <label>Date Captured:</label>
     <input type="date" id="date" name="date">
     <input type="submit"  value="Submit" />
+    <button  style="margin-left: 1rem" @click="scroll('home')"> HOME </button>
   </form>
 
   </template>
@@ -74,6 +75,11 @@ export default {
       }
       if(this.results==null || this.results.length===0){this.results=[{"id":0,"sol":100,"camera":{"id":0,"name":"","rover_id":0,"full_name":""},"img_src":"https://i.ytimg.com/vi/PQv9lp_aVFA/maxresdefault.jpg","earth_date":"","rover":{"id":0,"name":"Sorry, no Captures for "+ date+":/","landing_date":"","launch_date":"","status":""}}];}
       console.log(this.results);
+    },
+    scroll(id) {
+      document.getElementById(id).scrollIntoView({
+        behavior: "smooth"
+      });
     }},
   }
 </script>

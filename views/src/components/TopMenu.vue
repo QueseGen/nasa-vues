@@ -1,10 +1,8 @@
 <template >
   <div class="menu">
     <div class="items">
-      <h1 style="color: white" >NASA VUES</h1>
+      <h1 @click="scroll('selector')" style="color: white" >NASA VUES</h1>
     </div>
-
-
   </div>
 </template>
 
@@ -12,6 +10,13 @@
 export default {
   name: "Top-Menu",
   el:'#top',
+  methods: {
+    scroll(id) {
+      document.getElementById(id).scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  }
 }
 </script>
 

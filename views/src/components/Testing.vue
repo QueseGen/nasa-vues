@@ -7,7 +7,7 @@
     <p class="brief">{{ post.explanation }}</p>
      <!-- <p class="brief"> {{post.url}}</p> -->
     <img v-bind:src=post.hdurl alt={{post.url}}>
-    <p class="brief" >{{post.copyright}} <br> </p>
+    <p class="brief" id="copy">{{post.copyright}} <br> </p>
   </div>
   </div>
 </template>
