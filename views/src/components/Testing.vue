@@ -28,7 +28,7 @@ export default {
     async getData() {
       try {
         const response = await axios.get(
-          "https://api.nasa.gov/planetary/apod?api_key=ZtGGTCYJAN4niycyVPz6Dn3IyBuVwbNId4G6dpWJ"
+          process.env.VUE_APP_NASA_STORY
         );
         // JSON responses are automatically parsed.
         this.posts.push(response.data);
