@@ -57,8 +57,9 @@ export default {
 }
 
 img{
-  width: clamp(300px,100%, 1200px);
-  aspect-ratio: 16/9;
+  width: auto ;
+  max-width: 100% ;
+  height: auto ;
  }
 
 </style>

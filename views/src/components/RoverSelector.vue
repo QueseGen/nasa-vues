@@ -1,7 +1,6 @@
 
 <template>
   <h1 id="sol"> Sol Selector</h1>
-  <p style="color: red"> <b>(Press Command key + Arrow DOWN/END key to get back after, ENJOY!)</b></p>
   <div class="pics" v-for="post in results" v-bind:key="post.id">
     <h2>{{ post.rover.name}}</h2>
     <p>Capture: {{post.earth_date}}/Sol{{post.sol}}   |    By:  {{post.camera.full_name}}</p>
@@ -10,7 +9,6 @@
     <p><u>Launching & Landing Day</u></p>
     <p>{{post.rover.launch_date}} - {{post.rover.landing_date}}</p>
   </div>
-  <h2>Pick a Rover, Date and View to see its captured images that day:</h2>
   <form @submit.prevent="pullData"  onsubmit="parent.scrollTo(0,1200);" class="selector"  id="selector" style="min-height: 30vh;">
     <label>Chose a Rover:  </label>
     <select id="rover"  name="rover">
@@ -19,7 +17,10 @@
       <option value="spirit">Spirit</option>
     </select>
 
-    <label>Camera:  </label>
+    <label style="padding-left: 8rem;">Date Captured:</label>
+    <input type="date" id="date" name="date"> <br><br>
+
+    <label  style="margin-top:8rem; ">Camera:  </label>
     <select id="camera"  name="camera">
       <option value="">All</option>
       <option value="&camera=FHAZ">Front Hazard Avoidance Camera</option>
@@ -31,13 +32,14 @@
       <option value="&camera=CHEMCAM">Chemistry and Camera Complex</option>
       <option value="&camera=MAHLI">Mars Hand Lens Imager</option>
       <option value="&camera=MARDI">Mars Descent Imager</option>
-    </select>
-
-    <label>Date Captured:</label>
-    <input type="date" id="date" name="date">
-    <input type="submit"  value="Submit" />
-    <input type="button" style="margin-left: 1rem" @click="scroll('home')" value="HOME"/>
+    </select> <br>
+    <div class="buttons">
+    <input @click="scroll('home')" type="button"  value="HOME"/>
+    <input type="submit"  value="SUBMIT" />
+    </div>
+    <p @click="scroll('home')" style="color: red; "> <b>(CLICK FOR TOP)</b></p>
   </form>
+
 
   </template>
 <script>
@@ -84,13 +86,17 @@ export default {
   }
 </script>
 <style scoped>
-img{
-  width: clamp(300px,100%, 1200px);
-  aspect-ratio: 16/9;
+
+img, form{
+  width: auto ;
+  max-width: 100% ;
+  height: auto ;
 }
 
-p {
+p, h1, h2, .buttons {
   box-sizing: content-box;
   text-indent: 40px;
+  justify-content: center;
+  align-items: center;
 }
 </style>

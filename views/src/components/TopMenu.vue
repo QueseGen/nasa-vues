@@ -23,13 +23,17 @@ export default {
 <style scoped>
 .menu, .items{
   display: flex;
-  position: fixed;
   height: 50px;
   justify-content: center;
   align-items: center;
   box-sizing: content-box;
   background-color: black;
-  width: clamp(300px,100%, 100%);
+  width: 100%;
+  position: fixed;
+}
+
+.menu {
+
 }
 h1{
   color: white;
