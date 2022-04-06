@@ -93,6 +93,10 @@ img, form{
   height: auto ;
 }
 
+img{
+  aspect-ratio: auto;
+}
+
 p, h1, h2, .buttons {
   box-sizing: content-box;
   text-indent: 40px;
