@@ -2,6 +2,7 @@
   <div class="test">
     <br>
   <h1>+Article of the Day!+</h1>
+    <h2> {{NASA_STORY}}</h2>
     <div class="post" v-for="post in posts" v-bind:key="post.title">
     <h2> <u>{{ post.title}}</u></h2> <p>{{ post.date }}</p>
     <p class="brief">{{ post.explanation }}</p>
@@ -20,6 +21,7 @@ export default {
   el: '#test',
   data() {
     return {
+      NASA_STORY : process.env.VUE_APP_NASA_STORY,
       posts: [],
       errors:[]
     };
