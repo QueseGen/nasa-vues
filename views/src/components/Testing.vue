@@ -25,7 +25,7 @@ export default {
       errors:[]
     };
   },
-  methods: {
+  methods: { //Too Dynamic
     async getData() {
       try {
         const response = await axios.get(process.env.VUE_APP_NASA_STORY);
