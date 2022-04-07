@@ -28,7 +28,7 @@ export default {
     async getData() {
       try {
         const response = await axios.get(
-          process.env.VUE_APP_NASA_STORY
+          process.env.NASA_STORY
         );
         // JSON responses are automatically parsed.
         this.posts.push(response.data);
