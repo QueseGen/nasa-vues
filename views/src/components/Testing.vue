@@ -20,7 +20,7 @@ export default {
   el: '#test',
   data() {
     return {
-    NASA_STORY: process.env.VUE_APP_NASA_STORY,
+      NASA_STORY: process.env.VUE_APP_NASA_STORY,
       posts: [],
       errors:[]
     };
@@ -28,7 +28,7 @@ export default {
   methods: {
     async getData() {
       try {
-        const response = await axios.get(this.NASA_STORY);
+        const response = await axios.get(process.env.VUE_APP_NASA_STORY);
         // JSON responses are automatically parsed.
         this.posts.push(response.data);
       } catch (error) {
