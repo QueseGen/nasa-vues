@@ -1,7 +1,7 @@
 <template >
   <div class="menu">
     <div class="items">
-      <h1 @click="scroll('selector')">PRINT {{process.env.VUE_APP_NASA}}</h1>
+      <h1 @click="scroll('selector')">PRINT </h1>
     </div>
   </div>
 </template>
