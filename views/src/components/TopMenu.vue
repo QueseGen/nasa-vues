@@ -1,7 +1,7 @@
 <template >
   <div class="menu">
     <div class="items">
-      <h1 @click="scroll('selector')">{{process.env.VUE_APP_NASA}} </h1>
+      <h1 @click="scroll('selector')">{{VUE_APP_NASA}} </h1>
     </div>
   </div>
 </template>
@@ -10,6 +10,9 @@
 export default {
   name: "Top-Menu",
   el:'#top',
+  data(){
+    return {VUE_APP_NASA: process.env.VUE_APP_NASA}
+  },
   methods: {
     scroll(id) {
       document.getElementById(id).scrollIntoView({
