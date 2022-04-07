@@ -58,7 +58,7 @@ export default {
       this.results=[];
       console.log(event.target)
       const {rover, date, camera} = Object.fromEntries(new FormData(event.target));
-      const url = process.env.NASA_API+rover+"/photos?earth_date="+date+camera+"&api_key=ZtGGTCYJAN4niycyVPz6Dn3IyBuVwbNId4G6dpWJ";
+      const url = process.env.VUE_APP_NASA_API+rover+"/photos?earth_date="+date+camera+"&api_key=ZtGGTCYJAN4niycyVPz6Dn3IyBuVwbNId4G6dpWJ";
       try {
         const response = await axios.get(url);
         // JSON responses are automatically parsed.
