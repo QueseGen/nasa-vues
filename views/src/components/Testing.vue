@@ -1,7 +1,7 @@
 <template>
   <div class="test">
     <br>
-  <h1 onload="getData()">+Article of the Day!+</h1>
+  <h1>+Article of the Day!+</h1>
     <div class="post" v-for="post in posts" v-bind:key="post.title">
     <h2> <u>{{ post.title}}</u></h2> <p>{{ post.date }}</p>
     <p class="brief">{{ post.explanation }}</p>
@@ -26,9 +26,9 @@ export default {
     };
   },
   methods: {
-    getData() {
+    async getData() {
       try {
-        const response = axios.get(process.env.VUE_APP_NASA_STORY);
+        const response = await axios.get(process.env.VUE_APP_NASA_STORY);
         // JSON responses are automatically parsed.
         this.posts.push(response.data);
       } catch (error) {
