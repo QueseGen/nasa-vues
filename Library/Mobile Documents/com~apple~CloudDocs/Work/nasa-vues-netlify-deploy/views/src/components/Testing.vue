@@ -14,13 +14,14 @@
 
 <script>
 import axios from 'axios';
+import config from "./config";
 
 export default {
   name: "Test-ing",
   el: '#test',
   data() {
     return {
-      NASA_STORY : process.env.VUE_APP_NASA_STORY,
+      NASA_STORY : config.VUE_APP_NASA_STORY,
       posts: [],
       errors:[]
     };
@@ -28,7 +29,7 @@ export default {
   methods: { //Too Dynamic
     async getData() {
       try {
-        const response = await axios.get(process.env.VUE_APP_NASA_STORY);
+        const response = await axios.get(config.VUE_APP_NASA_STORY);
         // JSON responses are automatically parsed.
         this.posts.push(response.data);
       } catch (error) {

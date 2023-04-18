@@ -56,28 +56,16 @@ export default {
   },
   methods: {
     async pullData(event) {
-      this.results=[];
-      console.log(event.target)
-      const {rover, date, camera} = Object.fromEntries(new FormData(event.target));
-      const url = config.NASA_API+rover+"/photos?earth_date="+date+camera+config.NASA_KEY;
+      this.results = [];
+      const { rover, date, camera } = Object.fromEntries(new FormData(event.target));
+      const url = '/.netlify/functions/pullData.js'; // Change this to your Netlify Function URL
+
       try {
-        const response = await axios.get(url);
-        // JSON responses are automatically parsed.
-        this.results.push(response.data);
+        const response = await axios.post(url, { rover, date, camera });
+        this.results = response.data;
       } catch (error) {
         this.errors.push(error);
       }
-      console.log(url,"\n now lets get results:")
-      try {
-        this.results=this.results[0].photos;
-        console.log(this.results)
-      }catch (e){
-        this.errors.push(e);
-        console.log("\n There were errors..",this.errors)
-        this.results=[{"id":0,"sol":100,"camera":{"id":0,"name":"","rover_id":0,"full_name":""},"img_src":"https://i.ytimg.com/vi/PQv9lp_aVFA/maxresdefault.jpg","earth_date":"","rover":{"id":0,"name":"Sorry, no Captures for "+ date+":/","landing_date":"","launch_date":"","status":""}}];
-      }
-      if(this.results==null || this.results.length===0){this.results=[{"id":0,"sol":100,"camera":{"id":0,"name":"","rover_id":0,"full_name":""},"img_src":"https://i.ytimg.com/vi/PQv9lp_aVFA/maxresdefault.jpg","earth_date":"","rover":{"id":0,"name":"Sorry, no Captures for "+ date+":/","landing_date":"","launch_date":"","status":""}}];}
-      console.log(this.results);
     },
     scroll(id) {
       document.getElementById(id).scrollIntoView({
